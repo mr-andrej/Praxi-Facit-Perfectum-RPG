@@ -4,20 +4,30 @@ package main.java.com.mrandrej.rpg.entity;
 public abstract class Character {
     // Customization
     private String name;
+
     // Combat
     private int health;
     private int maxHealth;
     private int attack;
     private int defense;
+
     // Levelling
     private int currentLevel = 1;
     private int maxLevel = 50; // Max. level 50 by default
     private int currentExperience = 0;
     private int requiredExperience = 100; // Could apply some math to this to increase it at a variable rate
-    // Characteristics
-    private int intelligence;
-    private int strength;
-    private int endurance;
+
+    // SPECIAL - Default 5 [1 - 10]
+    private int strength = 5;
+    private int perception = 5;
+    private int endurance = 5;
+    private int charisma = 5;
+    private int intelligence = 5;
+    private int agility = 5;
+    private int luck = 5;
+
+    // Other
+    private int carryCapacity = 50;
 
 
     public Character(String name, int health, int attack, int defense) {
@@ -62,5 +72,14 @@ public abstract class Character {
 
     public boolean isAlive() {
         return health > 0;
+    }
+
+    public void checkCanLevelUp() {
+        if (currentExperience >= requiredExperience) {
+            currentLevel += 1;
+            currentExperience = 0;
+        }
+
+        // TODO: Add some sort of banner that player has levelled up
     }
 }
