@@ -1,14 +1,10 @@
+package main.java.com.mrandrej.rpg;
+
+import main.java.com.mrandrej.rpg.entity.Enemy;
+import main.java.com.mrandrej.rpg.entity.Player;
+
 import java.util.Scanner;
 
-// Main Game Class
-public class Main {
-    public static void main(String[] args) {
-        Game game = new Game();
-        game.start();
-    }
-}
-
-// Game Class to handle main game loop
 class Game {
     private Player player;
     private final Scanner scanner;
@@ -75,10 +71,10 @@ class Game {
 
     private Enemy generateEnemy() {
         String[] names = {"Goblin", "Skeleton", "Wolf", "Bandit"};
-        String name = names[(int)(Math.random() * names.length)];
-        int health = 50 + (int)(Math.random() * 30);
-        int attack = 5 + (int)(Math.random() * 5);
-        int defense = 2 + (int)(Math.random() * 3);
+        String name = names[(int) (Math.random() * names.length)];
+        int health = 50 + (int) (Math.random() * 30);
+        int attack = 5 + (int) (Math.random() * 5);
+        int defense = 2 + (int) (Math.random() * 3);
 
         return new Enemy(name, health, attack, defense);
     }
@@ -132,81 +128,5 @@ class Game {
         System.out.println("\nYou set up camp and rest...");
         player.heal(20);
         System.out.println("You recovered some HP!");
-    }
-}
-
-// Character class (parent class for Player and Enemy)
-abstract class Character {
-    private String name;
-    private int health;
-    private int maxHealth;
-    private int attack;
-    private int defense;
-
-    public Character(String name, int health, int attack, int defense) {
-        this.name = name;
-        this.maxHealth = health;
-        this.health = health;
-        this.attack = attack;
-        this.defense = defense;
-    }
-
-    public String getName() { return name; }
-    public int getHealth() { return health; }
-    public int getAttack() { return attack; }
-    public int getDefense() { return defense; }
-
-    public void takeDamage(int damage) {
-        health = Math.max(0, health - damage);
-    }
-
-    public void heal(int amount) {
-        health = Math.min(maxHealth, health + amount);
-    }
-
-    public boolean isAlive() {
-        return health > 0;
-    }
-}
-
-// Player class
-class Player extends Character {
-    private int experience;
-    private int level;
-
-    public Player(String name, int health, int attack, int defense) {
-        super(name, health, attack, defense);
-        this.experience = 0;
-        this.level = 1;
-    }
-
-    public void gainExperience(int exp) {
-        experience += exp;
-        checkLevelUp();
-    }
-
-    private void checkLevelUp() {
-        int nextLevel = level * 20;  // Simple level scaling
-        if (experience >= nextLevel) {
-            level++;
-            System.out.println("\nLevel Up! You are now level " + level + "!");
-        }
-    }
-
-    public void showStatus() {
-        System.out.println("\n=== " + getName() + "'s Status ===");
-        System.out.println("Level: " + level);
-        System.out.println("HP: " + getHealth());
-        System.out.println("Attack: " + getAttack());
-        System.out.println("Defense: " + getDefense());
-        System.out.println("Experience: " + experience);
-        System.out.println("Next level at: " + (level * 20) + " exp");
-    }
-}
-
-// Enemy class
-class Enemy extends Character {
-    public Enemy(String name, int health, int attack, int defense) {
-        super(name, health, attack, defense);
     }
 }
