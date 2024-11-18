@@ -1,6 +1,7 @@
 # 🎮 Praxi Facit Perfectum
 
-A text-based RPG adventure game built in Java. "Praxi Facit Perfectum" (Practice Makes Perfect) is a terminal-based role-playing game that combines classic RPG elements with simple yet engaging gameplay.
+A text-based RPG adventure game built in Java. "Praxi Facit Perfectum" (Practice Makes Perfect) is a terminal-based
+role-playing game that combines classic RPG elements with simple yet engaging gameplay.
 
 ## 🚀 Features
 
@@ -21,24 +22,28 @@ A text-based RPG adventure game built in Java. "Praxi Facit Perfectum" (Practice
 ## 🛠️ Installation
 
 ### Prerequisites
+
 - Java Development Kit (JDK) 11 or higher
 - Git (optional, for cloning)
 
 ### Setup
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/mr-andrej/Praxi-Facit-Perfectum-RPG.git
 cd Praxi-Facit-Perfectum-RPG
 ```
 
 2. Compile the game:
+
 ```bash
 cd src/main/java
 javac com/mrandrej/rpg/Main.java
 ```
 
 3. Run the game:
+
 ```bash
 java com.mrandrej.rpg.Main
 ```
@@ -54,6 +59,7 @@ java com.mrandrej.rpg.Main
     - `4`: Quit Game
 
 During combat:
+
 - `1`: Attack enemy
 - `2`: Attempt to run
 
@@ -74,6 +80,7 @@ src/
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
+
 1. Fork the repository
 2. Create a new branch
 3. Make your changes
@@ -82,6 +89,7 @@ Contributions are welcome! Feel free to:
 ## 🎓 Learning Purpose
 
 This project was created as a Java practice exercise, demonstrating:
+
 - Object-Oriented Programming principles
 - Inheritance and abstraction
 - Game state management
