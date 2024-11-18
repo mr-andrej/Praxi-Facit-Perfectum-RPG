@@ -37,7 +37,7 @@ public class MenuSystem {
 
         for (int i = 0; i < options.length; i++) {
             String option = (i + 1) + ". " + options[i];
-            String padding = " ".repeat(width - option.length() - 2);
+            String padding = " ".repeat(width - option.length() - 3);
             System.out.println(VERTICAL + " " + option + padding + VERTICAL);
         }
 
@@ -69,8 +69,8 @@ public class MenuSystem {
     private static void printActorStats(Character actor, int width) {
         String name = actor.getName();
         String health = String.format("HP: %d/%d", actor.getHealth(), actor.getMaxHealth());
-        System.out.println(VERTICAL + " " + name + " ".repeat(width - name.length() - 2) + VERTICAL);
-        System.out.println(VERTICAL + " " + health + " ".repeat(width - health.length() - 2) + VERTICAL);
+        System.out.println(VERTICAL + " " + name + " ".repeat(width - name.length() - 3) + VERTICAL);
+        System.out.println(VERTICAL + " " + health + " ".repeat(width - health.length() - 3) + VERTICAL);
     }
 
     public static void printGameLogo() {
@@ -79,9 +79,9 @@ public class MenuSystem {
                 ║  _____               _    ______         _ _   ║
                 ║ |  __ \\             (_)  |  ____|       (_) |  ║
                 ║ | |__) | __ __ _ _  _ _  | |__ __ _  ___ _| |_ ║
-                ║ |  ___/ '__/ _` | | | |  |  __/ _` |/ __| | __║
-                ║ | |   | | | (_| | |_| |  | | | (_| | (__| | |_║
-                ║ |_|   |_|  \\__,_|\\__, |  |_|  \\__,_|\\___|_|\\__║
+                ║ |  ___/ '__/ _` | | | |  |  __/ _` |/ __| | __ ║
+                ║ | |   | | | (_| | |_| |  | | | (_| | (__| | |_ ║
+                ║ |_|   |_|  \\__,_|\\__, |  |_|  \\__,_|\\___|_|\\__ ║
                 ║                    __/ |      Perfectum        ║
                 ║                   |___/                        ║
                 ╚════════════════════════════════════════════════╝

@@ -38,14 +38,14 @@ cd Praxi-Facit-Perfectum-RPG
 2. Compile the game:
 
 ```bash
-cd src/main/java
-javac com/mrandrej/rpg/Main.java
+cd src/
+javac main/java/com/mrandrej/rpg/*.java main/java/com/mrandrej/rpg/entity/*.java
 ```
 
 3. Run the game:
 
 ```bash
-java com.mrandrej.rpg.Main
+java main.java.com.mrandrej.rpg.Main
 ```
 
 ## 🎮 How to Play
