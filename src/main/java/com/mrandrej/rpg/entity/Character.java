@@ -13,7 +13,7 @@ public abstract class Character {
 
     // Levelling
     private int currentLevel = 1;
-    private int maxLevel = 50; // Max. level 50 by default
+    private final int maxLevel = 50; // Max. level 50 by default
     private int currentExperience = 0;
     private int requiredExperience = 100; // Could apply some math to this to increase it at a variable rate
 
@@ -51,11 +51,17 @@ public abstract class Character {
     }
 
     public int getAttack() {
-        return attack;
+        int baseAttack = attack;
+        int realAttack = baseAttack + (baseAttack * (strength / 4));
+
+        return realAttack;
     }
 
     public int getDefense() {
-        return defense;
+        int baseDefense = defense;
+        int realDefense = baseDefense + (baseDefense * (endurance / 4));
+
+        return realDefense;
     }
 
     public int getCurrentExperience() {

@@ -55,33 +55,35 @@ public class Game {
 
     private void processCommand(String choice) {
         switch (choice) {
-            case "1":
+            case "1" -> {
                 MenuSystem.clearScreen();
                 MenuSystem.printPlayerStatus(player);
                 MenuSystem.pressEnterToContinue();
-                break;
-            case "2":
-                explore();
-                break;
-            case "3":
-                rest();
-                break;
-            case "4":
+            }
+            case "2" -> explore();
+            case "3" -> rest();
+            case "4" -> {
                 isRunning = false;
                 System.out.println("Thanks for playing!");
-                break;
-            default:
+            }
+            default -> {
                 System.out.println("Invalid choice!");
                 MenuSystem.pressEnterToContinue();
+            }
         }
     }
 
     private void explore() {
         MenuSystem.clearScreen();
         System.out.println("\nExploring...");
-        if (Math.random() < 0.7) {  // 70% chance to encounter an enemy
+        final double randomEventToken = Math.random();
+
+        if (randomEventToken < 0.7) {  // 70% chance to encounter an enemy
             Enemy enemy = generateEnemy();
             startBattle(enemy);
+        } else if (randomEventToken > 0.7 && randomEventToken < 0.9) {
+            System.out.println("You found something interesting.");
+            // TODO: Get resources
         } else {
             System.out.println("You found nothing interesting...");
             MenuSystem.pressEnterToContinue();
@@ -89,7 +91,7 @@ public class Game {
     }
 
     private Enemy generateEnemy() {
-        String[] names = {"Goblin", "Skeleton", "Wolf", "Bandit"};
+        String[] names = {"Scavenger", "Thug", "Forager", "Bandit"};
         String name = names[(int) (Math.random() * names.length)];
         int health = 50 + (int) (Math.random() * 30);
         int attack = 5 + (int) (Math.random() * 5);
