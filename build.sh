@@ -5,7 +5,7 @@ rm -rf build
 mkdir -p build
 
 # Compile
-javac -d build src/main/java/com/mrandrej/rpg/*.java src/main/java/com/mrandrej/rpg/entity/*.java
+javac -d build src/main/java/com/mrandrej/rpg/*.java src/main/java/com/mrandrej/rpg/entity/*.java src/main/java/com/mrandrej/rpg/map/*.java
 
 # Run
 java -cp build main.java.com.mrandrej.rpg.Main

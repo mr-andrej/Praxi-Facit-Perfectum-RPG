@@ -1,6 +1,5 @@
 package main.java.com.mrandrej.rpg.entity;
 
-// Character class (parent class for Player and Enemy)
 public abstract class Character {
     // Customization
     private String name;
@@ -39,14 +38,17 @@ public abstract class Character {
     }
 
     public String getName() {
+
         return name;
     }
 
     public int getHealth() {
+
         return health;
     }
 
     public int getMaxHealth() {
+
         return maxHealth;
     }
 
