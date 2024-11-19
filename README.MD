@@ -35,17 +35,17 @@ git clone https://github.com/mr-andrej/Praxi-Facit-Perfectum-RPG.git
 cd Praxi-Facit-Perfectum-RPG
 ```
 
-2. Compile the game:
+2. Compile the game (or run build.sh to build and run it automatically):
 
 ```bash
 cd src/
-javac main/java/com/mrandrej/rpg/*.java main/java/com/mrandrej/rpg/entity/*.java
+javac -d build src/main/java/com/mrandrej/rpg/*.java src/main/java/com/mrandrej/rpg/entity/*.java src/main/java/com/mrandrej/rpg/map/*.java
 ```
 
 3. Run the game:
 
 ```bash
-java main.java.com.mrandrej.rpg.Main
+java -cp build main.java.com.mrandrej.rpg.Main
 ```
 
 ## 🎮 How to Play
@@ -54,9 +54,11 @@ java main.java.com.mrandrej.rpg.Main
 2. Enter your character's name
 3. Use the following commands in the main menu:
     - `1`: Show Player Status
-    - `2`: Explore (chance to encounter enemies)
-    - `3`: Rest (recover HP)
-    - `4`: Quit Game
+    - `2`: View Map
+    - `3`: Travel
+    - `4`: Explore Current Area
+    - `5`: Rest
+    - `6`: Quit
 
 During combat:
 
@@ -75,6 +77,8 @@ src/
 │                   ├── Main.java
 │                   ├── Game.java        # Game logic
 │                   └── entity/          # Game entities
+│                   └── items/           # Currently unused
+│                   └── map/             # World map logic
 ```
 
 ## 🤝 Contributing
@@ -99,4 +103,4 @@ This project was created as a Java practice exercise, demonstrating:
 ## ⚠️ Development Status
 
 This project is currently in active development. Features and mechanics may change as development progresses.
-I also reserve the right to break things due to sheer incompetence or lack of foresight.
+I also reserve the right to break things due to my own sheer incompetence or lack of foresight.
