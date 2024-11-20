@@ -8,16 +8,16 @@ role-playing game that combines classic RPG elements with simple yet engaging ga
 - 🎭 Character creation and development
 - ⚔️ Turn-based combat system
 - 👾 Dynamic enemy generation
-- 📈 Experience and leveling system
 - 🏕️ Rest and recovery mechanics
 
-## 🎯 Future Plans
+## 🎯 Feature Backlog
 
-- 🎒 Inventory system
-- 💫 Character classes (Warrior, Mage, Rogue)
-- ✨ Special abilities and magic
-- 💰 Economy system
-- 💾 Save/Load functionality
+1. 🎒 Inventory system
+2. 💫 Character classes 
+3. ✨ Special abilities and magic
+4. 💰 Economy
+5. 📈 Experience and leveling system
+6. 💾 Save/Load functionality
 
 ## 🛠️ Installation
 
