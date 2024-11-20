@@ -41,7 +41,7 @@ public class Game {
         while (isRunning) {
             printMenu();
             String choice = scanner.nextLine();
-            processCommand(choice);
+            processMainMenuCommand(choice);
         }
     }
 
@@ -53,6 +53,7 @@ public class Game {
                 "View Map",
                 "Travel",
                 "Explore Current Area",
+                "Trader", // TODO: Access to the trader should only be possible at the location type of village
                 "Rest",
                 "Quit"
         };
@@ -60,7 +61,14 @@ public class Game {
         System.out.print("\nChoose your action: ");
     }
 
-    private void processCommand(String choice) {
+    private void printMenu(String title, String[] options) {
+        MenuSystem.clearScreen();
+        MenuSystem.printBoxedHeader(title.toUpperCase());
+        MenuSystem.printBoxedMenu(options);
+        System.out.print("\nChoose your action: ");
+    }
+
+    private void processMainMenuCommand(String choice) {
         switch (choice) {
             case "1" -> {
                 MenuSystem.clearScreen();
@@ -70,8 +78,9 @@ public class Game {
             case "2" -> viewMap();
             case "3" -> travel();
             case "4" -> explore();
-            case "5" -> rest();
-            case "6" -> {
+            case "5" -> trader();
+            case "6" -> rest();
+            case "7" -> {
                 isRunning = false;
                 System.out.println("Thanks for playing!");
             }
@@ -80,6 +89,33 @@ public class Game {
                 MenuSystem.pressEnterToContinue();
             }
         }
+    }
+
+    private void processTraderCommand(String choice) {
+        switch (choice) {
+            case "1" -> buyFromTrader();
+            case "2" -> sellToTrader();
+            default -> {
+                System.out.println("Invalid choice!");
+                MenuSystem.pressEnterToContinue();
+            }
+        }
+    }
+
+    private void buyFromTrader() { // TODO: Finish the logic for this
+        MenuSystem.clearScreen();
+        System.out.println("\nYou approach the trader");
+
+        String[] options = {
+                "Dull Sword",
+                "Peasant Work Clothes",
+                "Leather Cap"
+        };
+        printMenu("Buying from the Trader", options);
+    }
+
+    private void sellToTrader() {
+
     }
 
     private void explore() {
@@ -219,5 +255,16 @@ public class Game {
             }
             MenuSystem.pressEnterToContinue();
         }
+    }
+
+    private void trader() {
+        MenuSystem.clearScreen();
+        System.out.println("\nYou approach the trader");
+
+        String[] options = {
+                "Buy",
+                "Sell",
+        };
+        printMenu("Trader", options);
     }
 }
