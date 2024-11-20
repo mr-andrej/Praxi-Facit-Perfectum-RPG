@@ -39,7 +39,7 @@ cd Praxi-Facit-Perfectum-RPG
 
 ```bash
 cd src/
-javac -d build src/main/java/com/mrandrej/rpg/*.java src/main/java/com/mrandrej/rpg/entity/*.java src/main/java/com/mrandrej/rpg/map/*.java
+javac -d build src/main/java/com/mrandrej/rpg/*.java src/main/java/com/mrandrej/rpg/entity/*.java src/main/java/com/mrandrej/rpg/map/*.java src/main/java/com/mrandrej/rpg/items/*.java
 ```
 
 3. Run the game:
