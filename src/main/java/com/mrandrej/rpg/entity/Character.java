@@ -1,5 +1,9 @@
 package main.java.com.mrandrej.rpg.entity;
 
+import main.java.com.mrandrej.rpg.items.Item;
+
+import java.util.ArrayList;
+
 public abstract class Character {
     // Customization
     private String name;
@@ -25,9 +29,10 @@ public abstract class Character {
     private int agility = 5;
     private int luck = 5;
 
-    // Other
-    private int carryCapacity = 50;
-
+    // Inventory
+    private int currentCarryLoad = 0;
+    private int maxCarryCapacity = 50;
+    private ArrayList<Item> inventory;
 
     public Character(String name, int health, int attack, int defense) {
         this.name = name;
@@ -38,17 +43,14 @@ public abstract class Character {
     }
 
     public String getName() {
-
         return name;
     }
 
     public int getHealth() {
-
         return health;
     }
 
     public int getMaxHealth() {
-
         return maxHealth;
     }
 
@@ -80,6 +82,44 @@ public abstract class Character {
 
     public boolean isAlive() {
         return health > 0;
+    }
+
+    public int getCurrentCarryLoad() {
+        return currentCarryLoad;
+    }
+
+    public void setCurrentCarryLoad(int currentCarryLoad) {
+        this.currentCarryLoad = currentCarryLoad;
+    }
+
+    public int getMaxCarryCapacity() {
+        return maxCarryCapacity;
+    }
+
+    public void setMaxCarryCapacity(int maxCarryCapacity) {
+        this.maxCarryCapacity = maxCarryCapacity;
+    }
+
+    public String addItemToInventory(Item item) {
+        if (this.currentCarryLoad + item.getWeight() <= this.maxCarryCapacity) {
+            this.inventory.add(item); // Add new item to inventory
+            this.currentCarryLoad += item.getWeight(); // Update the current carry load
+
+            return String.format("%s has been added to your inventory. [%s/%s]", item.getName(), currentCarryLoad, maxCarryCapacity);
+        } else {
+            return String.format("The item is too heavy (%s), you cannot carry it. [%s/%s]", item.getWeight(), currentCarryLoad, maxCarryCapacity);
+        }
+    }
+
+    public String removeItemFromInventory(Item item) {
+        if (this.inventory.contains(item)) {
+            this.inventory.remove(item);
+            this.currentCarryLoad -= item.getWeight();
+
+            return String.format("%s has been removed from your inventory. [%s/%s]", item.getName(), currentCarryLoad, maxCarryCapacity);
+        } else {
+            return "Impossible to remove item as it is not in your inventory";
+        }
     }
 
     public void checkCanLevelUp() {
