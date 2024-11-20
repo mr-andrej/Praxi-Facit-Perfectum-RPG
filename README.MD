@@ -3,21 +3,19 @@
 A text-based RPG adventure game built in Java. "Praxi Facit Perfectum" (Practice Makes Perfect) is a terminal-based
 role-playing game that combines classic RPG elements with simple yet engaging gameplay.
 
-## 🚀 Features
+## 🚀 Existing Features
 
-- 🎭 Character creation and development
-- ⚔️ Turn-based combat system
-- 👾 Dynamic enemy generation
-- 🏕️ Rest and recovery mechanics
+- 🎭 Character creation and development *(Basic)*
+- ⚔️ Turn-based combat system *(Basic)*
+- 👾 Dynamic enemy generation *(Basic)*
+- 🏕️ Rest and recovery mechanics *(Basic)*
 
-## 🎯 Feature Backlog
+## 🎯 Features In Progress
 
-1. 🎒 Inventory system
-2. 💫 Character classes 
-3. ✨ Special abilities and magic
-4. 💰 Economy
-5. 📈 Experience and leveling system
-6. 💾 Save/Load functionality
+1. 🎒 Inventory system *[70%]*
+2. 💰 Economy *[0%]*
+3. 📈 Experience and leveling system *[10%]*
+4. 💾 User authentication with Appwrite (Progress persistence) *[0%]*
 
 ## 🛠️ Installation
 
@@ -77,7 +75,7 @@ src/
 │                   ├── Main.java
 │                   ├── Game.java        # Game logic
 │                   └── entity/          # Game entities
-│                   └── items/           # Currently unused
+│                   └── items/           # Inventory & items logic
 │                   └── map/             # World map logic
 ```
 
